@@ -1,0 +1,73 @@
+@import "reset.css";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #2c2c2c;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+header ul li {
+  display: inline;
+  list-style: none;
+}
+
+header ul li a {
+  padding: 12px 25px;
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  transition: ease 0.3s;
+  border-radius: 5px;
+}
+
+header ul li a:hover,
+header ul li a.active {
+  background: #ffffff;
+  color: #000000;
+}
+
+div[role="main"] {
+  padding: 30px;
+}
+
+.oefening {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 30px;
+}
+
+.uitleg {
+  margin: 10px 0;
+  padding: 10px;
+  font-style: italic;
+  background: #fdffc8;
+  border: 1px solid yellow;
+}
+
+.mandje ul li {
+  margin-bottom: 10px;
+}
+
+.mandje ul li a {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+button {
+  background-color: #98e0e8;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  width: 50px;
+}

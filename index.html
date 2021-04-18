@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Javascript oefeningen - winkellijst</title>
+
+    <!-- scripts -->
+    <script src="javascript/general.js"></script>
+
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="styles/style.css"
+    />
+  </head>
+
+  <body>
+    <!--[if lte IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+
+    <div class="page">
+      <div role="main" class="cf">
+        <!-- OEFENING 1 -->
+
+        <div class="oefening">
+          <h2>Winkelmandje</h2>
+          <div class="uitleg">
+            Maak een winkellijst programma aan waarbij je waarden kan toevoegen
+            en verwijderen:
+          </div>
+        </div>
+
+        <input id="winkelmandInput" type="text" placeholder="add items" />
+        <button onclick="groceryShopping()">Add</button>
+        <div id="mandje"></div>
+
+        <script>
+          //document.getElementById("winkelmandInput").value; (haal de inhoud uit een input veld)
+          //document.getElementById("mandje").innerHTML = text; (voeg inhoud toe aan span met id 'mandje')
+          var grocerybag = [];
+          function groceryShopping() {
+            var item = document.getElementById("winkelmandInput").value;
+            grocerybag.push(item);
+            showGroceries();
+            document.getElementById("winkelmandInput").value = "";
+          }
+          function showGroceries() {
+            var emptyString = "";
+            for (var i = 0; i < grocerybag.length; i++) {
+              emptyString +=
+                grocerybag[i] +
+                ' <input type="button"value=delete onclick=remove(' +
+                i +
+                ")><br>";
+            }
+            var grocerybasket = document.getElementById("mandje");
+            grocerybasket.innerHTML = emptyString;
+          }
+          function remove(index) {
+            grocerybag.splice(index, 1);
+            showGroceries();
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
